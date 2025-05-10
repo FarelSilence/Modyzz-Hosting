@@ -1,0 +1,113 @@
+<div class="mt-3">
+    <!-- Saldo Card -->
+    <div class="card saldo-card text-white mb-4">
+        <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-wallet"></i> Saldo Anda</h5>
+            <h1 class="card-text">Rp 1.250.000</h1>
+        </div>
+    </div>
+
+    <!-- Topup Options -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="bi bi-cash-stack"></i> Topup Saldo</h5>
+        </div>
+        <div class="card-body">
+            <div class="row g-2">
+                <div class="col-6">
+                    <button class="btn btn-outline-primary w-100" onclick="showQRIS('manual')">
+                        <i class="bi bi-qr-code-scan"></i> QRIS Manual
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-outline-primary w-100" onclick="showQRIS('waktu')">
+                        <i class="bi bi-clock"></i> QRIS Waktu
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-outline-primary w-100">
+                        <i class="bi bi-phone"></i> DANA
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-outline-primary w-100">
+                        <i class="bi bi-phone"></i> OVO
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-outline-primary w-100">
+                        <i class="bi bi-phone"></i> GOPAY
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <h5 class="mt-3 mb-3"><i class="bi bi-server"></i> Layanan Hosting</h5>
+    <div class="row g-3 mb-4">
+        <div class="col-6">
+            <div class="card service-card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-hdd-stack fs-1 text-primary"></i>
+                    <h6 class="card-title mt-2">Hosting Basic</h6>
+                    <p class="text-muted small">1GB SSD, 10k visitors</p>
+                    <button class="btn btn-sm btn-primary w-100">Rp 50.000</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card service-card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-hdd-stack-fill fs-1 text-primary"></i>
+                    <h6 class="card-title mt-2">Hosting Premium</h6>
+                    <p class="text-muted small">5GB SSD, Unlimited</p>
+                    <button class="btn btn-sm btn-primary w-100">Rp 150.000</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Services -->
+    <h5 class="mt-3 mb-3"><i class="bi bi-lightning-charge"></i> Layanan Lainnya</h5>
+    <div class="row g-3">
+        <div class="col-4">
+            <div class="card service-card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-phone fs-1 text-primary"></i>
+                    <h6 class="card-title mt-2">Pulsa</h6>
+                    <button class="btn btn-sm btn-outline-primary w-100">Beli</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card service-card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-wifi fs-1 text-primary"></i>
+                    <h6 class="card-title mt-2">Paket Data</h6>
+                    <button class="btn btn-sm btn-outline-primary w-100">Beli</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card service-card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-lightbulb fs-1 text-primary"></i>
+                    <h6 class="card-title mt-2">PLN</h6>
+                    <button class="btn btn-sm btn-outline-primary w-100">Beli</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showQRIS(type) {
+        Swal.fire({
+            title: `QRIS ${type === 'manual' ? 'Manual' : 'Waktu'}`,
+            html: `<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ModyzzHosting-${type}-${Date.now()}" class="img-fluid">
+                  <p class="mt-3">Scan QRIS untuk melakukan pembayaran</p>`,
+            confirmButtonText: 'Tutup'
+        });
+    }
+</script>
